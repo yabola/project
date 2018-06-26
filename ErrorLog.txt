@@ -1,0 +1,47 @@
+{
+	"duration": "0.008 secs",
+	"classPath": "TestServer",
+	"startTime": "2018-06-25T23:32:20.903+08:00",
+	"context": "jcontext",
+	"result": {
+	"message": "java.io.NotSerializableException: TestServer
+	Serialization stack:
+
+	object not serializable (class: TestServer, value: TestServer@33d830ba)
+	field (class: TestServer$1, name: this$0, type: class TestServer)\n\t- object (class TestServer$1, TestServer$1@1413524a)
+	field (class: org.apache.spark.api.java.JavaRDDLike$$anonfun$fn$1$1, name: f$3, type: interface org.apache.spark.api.java.function.FlatMapFunction)
+	object (class org.apache.spark.api.java.JavaRDDLike$$anonfun$fn$1$1, )",
+	"errorClass": "java.lang.RuntimeException",
+	"stack": "java.lang.RuntimeException: java.io.NotSerializableException: TestServer\nSerialization stack:\n\t- object not serializable (class: TestServer, value: TestServer@33d830ba)\n\t- field (class: TestServer$1, name: this$0, type: class TestServer)
+	object (class TestServer$1, TestServer$1@1413524a)
+	field (class: org.apache.spark.api.java.JavaRDDLike$$anonfun$fn$1$1, name: f$3, type: interface org.apache.spark.api.java.function.FlatMapFunction)
+	object (class org.apache.spark.api.java.JavaRDDLike$$anonfun$fn$1$1, )
+	org.apache.spark.serializer.SerializationDebugger$.improveException(SerializationDebugger.scala:40)
+	at org.apache.spark.serializer.JavaSerializationStream.writeObject(JavaSerializer.scala:46)
+	org.apache.spark.serializer.JavaSerializerInstance.serialize(JavaSerializer.scala:100)
+	org.apache.spark.util.ClosureCleaner$.ensureSerializable(ClosureCleaner.scala:295)
+	org.apache.spark.util.ClosureCleaner$.org$apache$spark$util$ClosureCleaner$$clean(ClosureCleaner.scala:288)
+	org.apache.spark.util.ClosureCleaner$.clean(ClosureCleaner.scala:108)
+	org.apache.spark.SparkContext.clean(SparkContext.scala:2287)
+	org.apache.spark.rdd.RDD$$anonfun$flatMap$1.apply(RDD.scala:379)
+	org.apache.spark.rdd.RDD$$anonfun$flatMap$1.apply(RDD.scala:378)
+	org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	org.apache.spark.rdd.RDD.withScope(RDD.scala:362)
+	org.apache.spark.rdd.RDD.flatMap(RDD.scala:378)
+	org.apache.spark.api.java.JavaRDDLike$class.flatMap(JavaRDDLike.scala:126)
+	org.apache.spark.api.java.AbstractJavaRDDLike.flatMap(JavaRDDLike.scala:45)
+	TestServer.run(TestServer.java:38)\n\tat TestServer.run(TestServer.java:22)
+	spark.jobserver.japi.JavaJob.runJob(JavaJob.scala:20)
+	spark.jobserver.japi.JavaJob.runJob(JavaJob.scala:11)
+	spark.jobserver.JobManagerActor$$anonfun$getJobFuture$4.apply(JobManagerActor.scala:447)
+	scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	java.lang.Thread.run(Thread.java:748)\n"
+	},
+	"status": "ERROR",
+	"jobId": "12f94b76-74e2-4955-a900-fdd107d42a96",
+	"contextId": "036c0c00-4862-41aa-b9c5-2f3a5228a457"
+}
